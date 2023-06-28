@@ -4,7 +4,9 @@ const ObjectId = require("mongoose").Types.ObjectId;
 
 const Employee = require("../models/employee.model.js");
 const { generateCrudMethod } = require("../services");
-const employeeCrud = generateCrudMethod(Employee)
+const employeeCrud = generateCrudMethod(Employee);
+
+router.get('/test',(req,res))
 
 router.get("/", (req, res) => {
   employeeCrud.getAll()
@@ -43,5 +45,8 @@ router.get("/:id", (req, res) => {
 // }
 
 // })
+
+router.put('/:id', (req, res)=>{})
+router.delete("/:id", (req, res) => {});
 
 module.exports = router;
